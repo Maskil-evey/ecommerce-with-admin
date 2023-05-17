@@ -1,0 +1,23 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Expiry Date</th>
+      <th>Time Remaining</th>
+      <th>Warning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.name }}</td>
+      <td>{{ product.price | currency }}</td>
+      <td>
+        <button (click)="parseExpiryDate(product)">Parse Expiry Date</button>
+        {{ product.expiryDateObject | date }}
+      </td>
+      <td>{{ product.timeRemaining }}</td>
+      
+    </tr>
+  </tbody>
+</table>

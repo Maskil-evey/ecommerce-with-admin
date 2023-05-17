@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div class="categories ms-5 mt-3">
+          <ul class="rounded-1 col-9">
+            <li [routerLink]="['']">All Categories</li>
+            <li [routerLink]="['/shopping?category=vegetables']">Vegetables</li>
+            <li [routerLink]="['/shopping?category=fruits']" class="bg-danger text-light">Fruits</li>
+            <li [routerLink]="['/shopping?category=meat']" >Meat</li>
+            <!-- <li>Seafood</li> -->
+            <li [routerLink]="['/shopping?category=dairy']">Dairy</li>
+            <!-- <li>Grains</li> -->
+            <li [routerLink]="['/shopping?category=spice']">Spices</li>
+            <!-- <li>Herbs</li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-md-8" id="main">
+        <div class="main-contents">
+          <div class="row mt-1">
+            <div class="col-10 col-md-5 m-3" *ngFor="let item of fruitItems">
+              <div class="card p-0 m-0">
+                  <img [src]="item.photo" alt=""><span *ngIf="item.hasDiscount == 'true'" class="bg-warning text-center text-success fw-bold">{{item.disount}}%</span>
+                <div class="card-body m-0 p-0">
+                  <h5 class="card-title mt-2 ms-2 text-d">{{item.name}}</h5>
+                  <div>
+                    <p class="ms-2 small">{{item.price|currency}}</p>
+                  </div>
+                </div>
+              </div>
+              <button class="w-100 btn btn-danger mt-1" (click)="addToCart(item)">Add To Cart</button>
+            </div>
+          </div>
+        </div><!--end of main content-->
+      </div>
+    </div>
+  </div>
+</div>
+

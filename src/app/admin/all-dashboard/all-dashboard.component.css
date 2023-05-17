@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500&display=swap');
+*{
+  font-family: 'Cabin',sans-serif;
+}
+.page-wrapper {
+  font-family: "Cabin", sans-serif !important;
+  background-color: #eeeef8;
+  /* height: ; */
+}
+.content{
+  position: relative;
+  top: 11vh;
+  background-color: #eeeef8;
+}
+
+nav{
+  background-color: white !important;
+}
+.navbar-nav {
+  display: flex !important;
+}
+
+.search {
+  background-color: #7093e5;
+  width: 40px;
+  height: 35px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+}
+.offcanvas-header{
+  background-color:  #f68685 !important;
+}
+.profile{
+  width: 100px;
+  position: relative;
+  top: 45%;
+  height: 100px;
+  border-radius: 50%;
+  margin: auto;
+  box-shadow: 0px 1px 1px black;
+}
+.mail{
+  border-bottom: 1px solid rgb(233, 229, 229);
+  font-size: 15px !important;
+}
+.mail *{
+  margin: 0;
+  padding: 0;
+}
+.sidebar a {
+  color: white;
+  padding: 10px 1.5rem;
+  text-decoration: none;
+  display: block;
+  font-size: 15px;
+  align-items: end;
+  width: 100%;
+  color: black;
+  font-weight: bold;
+}
+
+.alert-txt{
+  width: 100px;
+}
+
+ body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+.sidebarr {
+  margin: 0;
+  padding: 0;
+  width: 230px;
+  background-color: #ffff;
+  position: fixed;
+  top: 11vh;
+  left: 1px;
+  bottom: 1px;
+  z-index: 0;
+
+
+}
+.sidebarr a {
+  display: block;
+  color: black;
+  padding: 14px;
+  text-decoration: none;
+  padding-left: 30px;
+}
+.sidebarr a.active {
+  background-color: #eeeef8;
+  border-radius: 20px 0 0 20px;
+  color: #f53f85;
+}
+
+.sidebarr a:hover:not(.active) {
+  transition: ease-in .3s;
+  color: #f53f85;
+}
+
+div.content {
+  margin-left: 230px;
+}
+.content-2{
+  background-color: #ffff;
+  color: black;
+  padding: 30px 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+.page-content{
+  font-size: 13px;
+  width: 90%;
+}
+div a i{
+  padding-right: 10px;
+}
+.content-2 .space *{
+  margin: 0;
+  padding: 0;
+}
+.content-2 small{
+  background-color: rgb(68, 250, 83,0.3);
+  padding: 4px;
+  border-radius: 5px;
+  color:  rgb(68, 250, 83);
+}
+.container {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.chart-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.chart {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: #f5f5f5;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.y-axis span {
+  text-align: right;
+  padding-right: 5px;
+  padding: 10px;
+}
+
+.bars {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: flex-end; */
+  flex-grow: 1;
+}
+
+.bar {
+  display: flex;
+  /* align-items: flex-end; */
+  justify-content: space-around;
+  width: 30px;
+}
+
+.bar-segment {
+  width: 100%;
+  transition: 0.3s ease-in-out;
+}
+
+.x-axis {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center
+}
+.legend-color {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.net-profit {
+  background-color: #007bff;
+}
+
+.revenue {
+  background-color: #28a745;
+}
+
+.free-cash-flow {
+  background-color: #ffc107;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.chart-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.chart {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: #f5f5f5;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.y-axis span {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.bars {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-grow: 1;
+}
+
+.bar {
+  width: 30px;
+  background-color: #007bff;
+  transition: height 0.3s ease-in-out;
+  position: relative;
+}
+
+.bar::before {
+  content: attr(data-value);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.x-axis {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+

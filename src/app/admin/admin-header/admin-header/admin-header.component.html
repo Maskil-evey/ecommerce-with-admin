@@ -1,0 +1,119 @@
+
+<nav class="p-3 shadow-sm">
+  <div class="row">
+    <div class="col-6">
+      <div class="logo">
+        <a class="navbar-brand fw-bold bg-danger text-light ps-1 rounded-1"  routerLink="/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16">
+          <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/>
+        </svg> Space <span class="text-success rounded-2 p-1 bg-warning">Groceries</span>
+        </a>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="d-flex justify-content-end">
+          <button class="btn text-white shadow-none fw-bold btn-sm me-5  "type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Add Products</button>
+          <i
+            class="bi bi-bell-fill mt-2 fs-5 me-4"
+          ></i>
+
+          <i
+            class="bi bi-person-circle fs-2"
+          ></i>
+          <p class="fs-5 admin ms-2 mt-2">ADMIN</p>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Off-Canva -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title w-100 pb-2 border-bottom border-1" id="offcanvasRightLabel">Add Product</h5>
+   
+    
+    <div type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></div>
+  </div>
+  <div class="offcanvas-body mx-auto">
+    <div  class="form-contain shadow-none">
+      <form ngForm="#productForm" action="">
+        <div class="upload-wrapper" >
+          <h6>Add your product image here</h6>
+          <label for="uploadInput" class="upload-label text-center">
+            <input type="file" id="uploadInput" (change)="onFileChange($event)" #fileInput>
+            <div class="d-block text-center">
+              <i class="upload-image bi bi-image me-2 fs-1"></i>
+            <span>Click to upload an image</span>
+            </div>
+          </label>
+        </div>
+        <br>
+        <img *ngIf="product.photo" [src]="product.photo" width="80" height="80">
+        <!--  -->
+        <br>
+        <br>
+        <h5>Add your product description and necessary information below</h5>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name"  name="name"  class="form-control shadow-none"[(ngModel)]="product.name" required>
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"  class="form-control shadow-none" [(ngModel)]="product.description" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price"  class="form-control shadow-none" [(ngModel)]="product.price" required>
+          </div>
+          <div class="form-group">
+            <label for="discount">Discount:</label>
+            <select id="discount" name="discount"  class="form-control shadow-none" [(ngModel)]="product.hasDiscount" required>
+              <option value = true>Yes</option>
+              <option value = false>No</option>
+            </select>
+          </div>
+          <div *ngIf="product.hasDiscount == 'true'" class="form-group">
+            <label for="discunt">Discount in per(%):</label>
+            <input type="number" id="discount" name="price"  class="form-control shadow-none" [(ngModel)]="product.disount" required>
+          </div>
+          <div class="form-group">
+            <label for="name">Expiry Date:</label>
+            <input type="date" id="expiry"  name="expiry"  class="form-control shadow-none"[(ngModel)]="product.expiryDate" required>
+          </div>
+          <div class="form-group">
+            <label for="category">Category:</label>
+            <select id="category" name="category"  class="form-control shadow-none" [(ngModel)]="product.category" required>
+              <option value="Vegetables">Vegetables</option>
+              <option value="Dairy">Dairy</option>
+              <option value="Spices">Spices</option>
+              <option value="Meat">Meat</option>
+              <option value="Fruits">Fruits</option>
+              <option value="Milk">Milk</option>
+            </select>
+          </div>
+          <button type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  (click)="submitForm()"  class="btn text-white">Submit</button>    
+          <div class="img">
+            
+          </div>    
+      </form>
+    </div>
+        
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal  fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content border-0 shadow rounded-0">
+      <div class="modal-body">
+        <div class="d-flex justify-content-center">
+          <i class="bi bi-check-circle-fill fs-1 text-white"></i>
+        </div>
+        <div class="d-flex justify-content-center">
+          <h5 class="text-white">Product Added Successfully</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

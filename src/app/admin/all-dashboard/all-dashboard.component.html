@@ -1,0 +1,204 @@
+<app-admin-header></app-admin-header>
+<div class="sidebarr shadow text-light" #side>
+  <div class="sidebar mt-4 align-items-start d-block">
+    <a class="active" href="/admin"
+      ><i class="bi-speedometer2"></i> Dashboard
+    </a>
+    <a href="/admin/products"><i class="bi-cart" routerLink="/admin/products"></i>Products</a>
+    <a href="/admin/orders"
+      ><i class="bi-envelope-paper" routerLink="/admin/orders"></i>Orders</a
+    >
+    <a href="/admin/customers"
+      ><i class="bi-person-heart" routerLink="/admin/customers"></i> Customers</a
+    >
+  </div>
+</div>
+<div class="content" #cont>
+  <div class="page-wrapper">
+    <br /><br />
+
+    <div class="page-content ms-5">
+      <h5>Dashboard</h5>
+      <br />
+      <div class="">
+        <div class="row">
+          <div class="col-12 mb-2 col-md-6 col-lg-3">
+            <div class="content-2">
+              <div class="row">
+                <div class="col-6 space">
+                  <p class="h5">Total Revenue</p>
+                  <small class="mb-4 text-secondary">(Last Month)</small>
+                  <p class="fs-5 mt-3 mb-0">$9000</p>
+                </div>
+                <!--  -->
+                <div class="col-6">
+                  <div class="float-end">
+                    <i class="bi-cash-coin fs-1 text-danger h3"></i>
+                    <br />
+                    <div class="d-flex">
+                      <i class="bi bi-arrow-90deg-up mt-4"></i>
+
+                      <small class="mt-4">Revenue up</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 mb-2 col-md-6 col-lg-3">
+            <div class="content-2">
+              <div class="row">
+                <div class="col-6 space">
+                  <p class="h5">Total Order</p>
+                  <small class="mb-4 text-secondary">(Last Month)</small>
+                  <p class="fs-5 mt-3 mb-0">$9000</p>
+                </div>
+                <!--  -->
+                <div class="col-6">
+                  <div class="float-end">
+                    <i class="bi-cart fs-1 text-primary h3"></i>
+                    <br />
+                    <div class="d-flex">
+                      <i class="bi bi-arrow-90deg-up mt-4"></i>
+
+                      <small class="mt-4">Order up</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 mb-2 col-md-6 col-lg-3">
+            <div class="content-2">
+              <div class="row">
+                <div class="col-6 space">
+                  <p class="h5">Customer</p>
+                  <small class="mb-4 text-secondary">(Last Week)</small>
+                  <p class="fs-5 mt-3 mb-0">3,000</p>
+                </div>
+                <!--  -->
+                <div class="col-6">
+                  <div class="float-end">
+                    <i class="bi-person fs-1 text-warning h3"></i>
+                    <br />
+                    <div class="d-flex">
+                      <i class="bi bi-arrow-90deg-up mt-4"></i>
+
+                      <small class="mt-4">Customer up</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 mb-2 col-md-6 col-lg-3">
+            <div class="content-2">
+              <div class="row">
+                <div class="col-6 space">
+                  <p class="h5">Total Delivery</p>
+                  <small class="mb-4 text-secondary">(Last Month)</small>
+                  <p class="fs-5 mt-3 mb-0">34,000</p>
+                </div>
+                <!--  -->
+                <div class="col-6">
+                  <div class="float-end">
+                    <i class="bi-basket fs-1 text-danger h3"></i>
+                    <br />
+                    <div class="d-flex">
+                      <i class="bi bi-arrow-90deg-down mt-4"></i>
+
+                      <small class="mt-4">Revenue up</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+        </div>
+      </div>
+      <br>
+      <div class="container">
+        <h2 class="chart-title">Monthly Revenue</h2>
+        <div class="chart">
+          <div class="y-axis">
+            <span>120</span>
+            <span>100</span>
+            <span>80</span>
+            <span>60</span>
+            <span>40</span>
+            <span>20</span>
+            <span>0</span>
+          </div>
+          <div class="bars ">
+            <div class="bar">
+              <div class="bar-segment  net-profit" style="height: 50%;"></div>
+              <div class="bar-segment revenue" style="height: 80%;"></div>
+              <div class="bar-segment free-cash-flow" style="height: 30%;"></div>
+            </div>
+            <!-- Repeat the above bar structure for each month -->
+          </div>
+          <div class="x-axis">
+            <span>Jan</span>
+            <span>Feb</span>
+            <span>Mar</span>
+            <span>Apr</span>
+            <span>May</span>
+            <span>Jun</span>
+            <span>Jul</span>
+            <span>Aug</span>
+            <span>Sep</span>
+            <span>Oct</span>
+            <span>Nov</span>
+            <span>Dec</span>
+          </div>
+        </div>
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-color net-profit"></div>
+            <span>Net Profit</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color revenue"></div>
+            <span>Revenue</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color free-cash-flow"></div>
+            <span>Free Cash Flow</span>
+          </div>
+        </div>
+      </div>
+      <br><br>
+
+      <!--  -->
+      <div class="container">
+        <h2 class="chart-title">Sales by Date</h2>
+        <div class="chart">
+          <div class="y-axis">
+            <span>100</span>
+            <span>80</span>
+            <span>60</span>
+            <span>40</span>
+            <span>20</span>
+            <span>0</span>
+          </div>
+      
+          <div class="x-axis">
+            <span>01/01</span>
+            <span>01/02</span>
+            <span>01/03</span>
+            <!-- Repeat the above span for each date -->
+          </div>
+        </div>
+      </div>
+      
+      <!--  -->
+    </div>
+  </div>
+  <!--  -->
+</div>
+
+
